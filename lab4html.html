@@ -1,0 +1,74 @@
+
+<head>
+    <title>Lab 4</title>
+    <style>
+        body {
+            background-color: rgb(156, 31, 214);
+            color: rgb(235, 162, 162);
+            border: solid rgb(86, 41, 138);
+        }
+        .x {
+            border: solid white;
+
+        }
+        button {
+           
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="header">Interactive Page</h1>
+
+    <div class="x">
+        <h2>Name</h2>
+        <form>
+            <input type="text" id="nameInput" required>
+            <button type="button" onclick="alertName()">Alert Me</button>
+        </form>
+    </div>
+
+    <div class="x">
+       
+        <button onclick="changeColor()">Change Color</button>
+    </div>
+
+    <div class="x">
+        <h2>Text Tester</h2>
+        <form id="textForm">
+            <input type="text" id="textInput">
+            <button type="button" onclick="validateText()">Validate Text</button>
+        </form>
+    </div>
+
+    <div class="x">
+        <button onclick="addText()">Add Text</button>
+    </div>
+
+    <script>
+        function alertName() {
+            let name = document.getElementById("nameInput").value;
+            if (name==true) {
+                alert("Hi " + name );
+            }
+        }
+
+        function changeColor() {
+            let body = document.body;
+            body.style.backgroundColor = (body.style.backgroundColor === "blue") ? "green" : "blue";
+        }
+
+        function validateText() {
+            let text = document.getElementById("textInput").value;
+            var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+            if (validation.test(text)==true) {
+                alert("u stinky");
+            } 
+        }
+
+        function addText() {
+            let heading = document.getElementById("header");
+            heading.innerText += " Add Text";
+        }
+    </script>
+</body>
